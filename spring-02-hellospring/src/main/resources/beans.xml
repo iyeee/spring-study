@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+        <bean id="daoimpl" class="com.kuang.dao.UserDaoImpl"/>
+        <bean id="mysqlimpl" class="com.kuang.dao.UserDaoMysqlImpl"/>
+
+    <bean id="UserServiceImpl" class="com.kuang.service.UserServiceImpl">
+        <property name="userDao" ref="mysqlimpl"></property>
+    </bean>
+
+    <bean id="U" class="com.kuang.service.UserServiceUmpl2">
+        <property name="userDao" ref="mysqlimpl"></property>
+    </bean>
+
+</beans>
